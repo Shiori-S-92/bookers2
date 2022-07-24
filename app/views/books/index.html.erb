@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-3">
         <h2>User info</h2>
-        <img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMEJXQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d6654b8bb2685f1d8bc3d0328ade81c00e3db1eb/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--4a929dbc7794f3c4610ba9ba5402762ad9cd1a14/default-image.jpg">
+          <%= image_tag @user.get_profile_image(100,100) %>
         <table class="table">
           <tbody><tr></tr>
               <tr>
@@ -12,7 +12,7 @@
               </tr>
               <tr>
                 <th>introduction</th>
-                <th><%= @user.name %></th>
+                <th><%= @user.introduction %></th>
               </tr>
           </tbody>
         </table>
@@ -41,23 +41,28 @@
 
       <div class="col-md-8 offset-md-1">
         <h2>Books</h2>
-        <table class="table table-hover table-inverse">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Title</th>
-              <th>Opinion</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <%= %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+
+          <table class="table table-hover table-inverse">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Opinion</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @books.each do |book| %>
+              <tr>
+                <td>
+                  <img src="XXXX">
+                  <%= link_to book_path(:id), class: 'XXXX' %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+
       </div>
     </div>
   </div>
