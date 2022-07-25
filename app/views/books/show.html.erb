@@ -20,11 +20,10 @@
                 </td>
                 <td><%= @book.body %></td>
                 <td>
-                  <%= link_to 'Edit', book_path, class: "btn btn-sm btn-success" %>
+                  <%= link_to 'Edit', edit_book_path, class: "btn btn-sm btn-success" %>
                 </td>
-                <!-- Destroyボタン 「data-confirm= '本当に消しますか？'」を入れる！-->
                 <td>
-                  <%= link_to 'Destroy', book_path, class: "btn btn-sm btn-danger" %>
+                  <%= link_to 'Destroy', book_path, data: {confirm: "本当に消しますか？"}, class: "btn btn-sm btn-danger" %>
                 </td>
               </tr>
           </tbody>
