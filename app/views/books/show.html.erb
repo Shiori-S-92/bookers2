@@ -19,10 +19,13 @@
                   <%= link_to @book.title, book_path(@book.id) %>
                 </td>
                 <td><%= @book.body %></td>
-                <!-- Editボタン -->
-                <td></td>
-                <!-- Destroyボタン -->
-                <td></td>
+                <td>
+                  <%= link_to 'Edit', book_path, class: "btn btn-sm btn-success" %>
+                </td>
+                <!-- Destroyボタン 「data-confirm= '本当に消しますか？'」を入れる！-->
+                <td>
+                  <%= link_to 'Destroy', book_path, class: "btn btn-sm btn-danger" %>
+                </td>
               </tr>
           </tbody>
         </table>
