@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get "/homes/about" => "homes#about", as: "about"
 
-  resources :books, only: [:new, :index, :show, :create, :edit, :destroy]
+  resources :books, only: [:new, :index, :show, :create, :edit, :update, :destroy]
 
   resources :users, only: [:create, :index, :show, :edit, :update]
+
+  # patch '/books/:id' => 'books#update', as: 'update_book'
 
 end

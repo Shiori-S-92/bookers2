@@ -1,25 +1,22 @@
-<!--<h1>Books#edit</h1>-->
-<!--<p>Find me in app/views/books/edit.html.erb</p>-->
-
 <p id="notice"></p>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h1>Editing Book</h1>
-      <%= form_with model: book do |f| %>
+      <%= form_with model: @book, url: '/books', method: :PATCH do |f| %>
         <div class="form-group">
-          <label for="book_title">Title</label>
-          <!--XXXXXX-->
+          <label for="book_title">Title</label><br>
+          <%= f.text_field :title %>
         </div>
         <div class="form-group">
-          <label for="book_opinion">Opinion</label>
-          <!--XXXXXX-->
+          <label for="book_opinion">Opinion</label><br>
+          <%= f.text_area :body %>
         </div>
         <div class="form-group">
-          <%= link_to 'Update Book', book_path, class: "btn btn-sm btn-success" %>
+          <%= f.submit 'Update Book', class: "btn btn-sm btn-success" %>
         </div>
       <% end %>
-      <!--Show　｜ Back の追記-->
+      <%= link_to 'Show', book_path %> | <%= link_to 'Back', :back %>
     </div>
   </div>
 </div>
