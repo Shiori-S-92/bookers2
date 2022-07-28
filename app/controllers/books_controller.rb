@@ -25,7 +25,6 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    @update_book = @book.update(book_params)
   end
 
   def update
@@ -40,7 +39,7 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-  
+
   # ストロングパラメータ
   def book_params
     params.require(:book).permit(:title, :body)
