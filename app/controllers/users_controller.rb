@@ -26,12 +26,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to books_path
+    redirect_to user_path(@user.id)
   end
 
   private
   # ストロングパラメータ
   def user_params
-    params.require(:user, :book).permit(:name, :profile_image)
+    params.require(:user).permit(:name, :introduction)
   end
 end
